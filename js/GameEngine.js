@@ -5,13 +5,13 @@
 /**
  * Setting first available method to requestAnimFrame based on browser.
  */
-window.requestAnimFrame = (function () {
+window.requestAnimFrame = (function() {
   return window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     window.oRequestAnimationFrame ||
     window.msRequestAnimationFrame ||
-    function ( /* function */ callback, /* DOMElement */ element) {
+    function( /* function */ callback, /* DOMElement */ element) {
       window.setTimeout(callback, 1000 / 60);
     };
 })();
@@ -149,7 +149,7 @@ class GameEngine {
   noInputs() {
     var self = this;
     return (Object.keys(self.inputs)
-      .every(function (key) {
+      .every(function(key) {
         return !self.inputs[key]
       }));
   }
@@ -162,7 +162,8 @@ class GameEngine {
    */
   hasMoveInputs() {
     var self = this;
-    return (self.inputs['KeyW'] || self.inputs['KeyA'] || self.inputs['KeyS'] || self.inputs['KeyD']);
+    return (self.inputs['KeyW'] || self.inputs['KeyA'] || self.inputs['KeyS']
+    || self.inputs['KeyD']);
   }
 }
 
