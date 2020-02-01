@@ -22,6 +22,14 @@ class Entity {
     this.collides = true;
   }
 
+  update() {
+
+  }
+
+  draw() {
+
+  }
+
   getCollisionBox() {
     return this.box;
   }
@@ -29,6 +37,15 @@ class Entity {
   predictBox() {
     this.box.min = [this.newX, this.newY];
     this.box.max = [this.newX + this.width, this.newY + this.height];
+  }
+
+  resetNewBox() {
+    this.newBox = {
+      minX: this.box.minX,
+      minY: this.box.minY,
+      maxX: this.box.maxX,
+      maxY: this.box.maxY
+    };
   }
 
   allowUpdate() {

@@ -34,10 +34,7 @@ class GameEngine {
       "KeyK": false,
       "Space": false
     };
-
-    this.heroFace = 's';
     this.currentTileMap = 0;
-
     this.ctx = ctx;
     this.startInput();
   }
@@ -81,7 +78,6 @@ class GameEngine {
     //console.log(collisions);
     this.collision.processCollisions(this.myCollisions);
     this.entities.forEach(entity => entity.allowUpdate());
-
   }
 
   /**
@@ -162,8 +158,8 @@ class GameEngine {
    */
   hasMoveInputs() {
     var self = this;
-    return (self.inputs['KeyW'] || self.inputs['KeyA'] || self.inputs['KeyS']
-    || self.inputs['KeyD']);
+    return (self.inputs['KeyW'] || self.inputs['KeyA'] || self.inputs['KeyS'] ||
+      self.inputs['KeyD']);
   }
 }
 
